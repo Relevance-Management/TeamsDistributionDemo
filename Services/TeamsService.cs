@@ -22,11 +22,11 @@ namespace TeamsDemo.Services
         {
             try
             {
-                _clientId = "be4e0ee0-6881-4e41-bd0b-2a97de388804";
-                _clientSecret = "rDy8Q~YbJa9rmJwSpiB4m4ypvhmkY9Zz8l.Wvb6_";
-                _tenantId = "1d085dba-30d5-4ecb-b9e3-8f4c75e0891d";
-                _teamId = "0706eef9-f6f1-45b3-bc7e-d067857458ed";
-                _channelId = "19:5f6aaa3d236f46d6883e5334ae6f4c17@thread.tacv2";
+                _clientId = "enter_client_id";
+                _clientSecret = "enter_client_secret";
+                _tenantId = "enter_tenant_id";
+                _teamId = "enter_team_id";
+                _channelId = "enter_channel_id";
 
                 var scopes = new[] { "https://graph.microsoft.com/.default" };
 
