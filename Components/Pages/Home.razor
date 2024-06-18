@@ -1,0 +1,41 @@
+﻿@page "/"
+@using TeamsDemo.Services.Interfaces
+@inject ITeamsService TeamsService
+@rendermode InteractiveServer
+
+<h1>Home</h1>
+
+<button @onclick="SendMessage">Send Message</button>
+<button @onclick="GetAllTeamsAsync">Get All Teams</button>
+<button @onclick="CreateTeam">Create Team</button>
+<button @onclick="CreateChannel">Create Channel</button>
+
+
+<div>@message</div>
+
+@code {
+    private string message;
+
+    private async Task CreateTeam()
+    {
+        await TeamsService.CreateTeamAsync("KpiMailerTestTeam", "This is the kpimailer dedicated team for raports");
+    }
+
+    private async Task SendMessage()
+    {
+        message = "Sending message...";
+        await TeamsService.SendMessageAsync("Hello from Blazor!");
+
+        message = "Message sent successfully!";
+    }
+
+    private async Task GetAllTeamsAsync()
+    {
+        await TeamsService.GetAllTeamsAsync();
+    }
+
+    private async Task CreateChannel()
+    {
+        await TeamsService.CreateChannelAsync("KpiRaportChannel", "This is the channel for Kpi Mailer Raport distribution.");
+    }
+}
